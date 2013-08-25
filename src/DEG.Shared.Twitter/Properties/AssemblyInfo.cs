@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("DEG.Shared.Twitter")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Simple library for using the Twitter API to retrieve a user timeline.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Digital Evolution Group")]
+[assembly: AssemblyCompany("DEG")]
 [assembly: AssemblyProduct("DEG.Shared.Twitter")]
-[assembly: AssemblyCopyright("Copyright © Digital Evolution Group 2013")]
+[assembly: AssemblyCopyright("Copyright © DEG 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
