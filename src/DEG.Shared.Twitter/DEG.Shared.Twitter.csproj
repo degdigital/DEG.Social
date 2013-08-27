@@ -44,7 +44,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Authorization\ApplicationOnlyAuth.cs" />
-    <Compile Include="Authorization\AuthenticatedWebRequest.cs" />
     <Compile Include="Authorization\ITwitterAuth.cs" />
     <Compile Include="Exceptions\TwitterAuthenticationFailedException.cs" />
     <Compile Include="Models\Timeline.cs" />

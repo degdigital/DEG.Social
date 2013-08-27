@@ -1,4 +1,4 @@
-﻿using System.Collections.Specialized;
+﻿using System.Net;
 
 namespace DEG.Shared.Twitter.Authorization
 {
@@ -6,6 +6,6 @@ namespace DEG.Shared.Twitter.Authorization
     //https://dev.twitter.com/docs/auth/obtaining-access-tokens
     public interface ITwitterAuth
     {
-        NameValueCollection GetRequestHeaders();
+        WebClient GetAuthenticatedWebClient();
     }
 }

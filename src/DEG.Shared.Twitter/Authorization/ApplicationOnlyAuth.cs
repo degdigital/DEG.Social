@@ -19,8 +19,24 @@ namespace DEG.Shared.Twitter.Authorization
             _consumerKey = consumerKey;
             _consumerSecret = consumerSecret;
         }
+        public ApplicationOnlyAuth(string bearerToken)
+        {
+            _bearerToken = bearerToken;
+        }
 
-        private void Authenticate()
+        public WebClient GetAuthenticatedWebClient()
+        {
+            if (string.IsNullOrEmpty(_bearerToken))
+                RetrieveBearerToken();
+
+            var client = new WebClient();
+            client.Headers.Clear();
+            client.Headers.Add(HttpRequestHeader.Authorization, "Bearer " + _bearerToken);
+
+            return client;
+        }
+
+        private void RetrieveBearerToken()
         {
             var encodedConsumerKey = HttpUtility.UrlEncode(_consumerKey);
             var encodedConsumerSecret = HttpUtility.UrlEncode(_consumerSecret);
@@ -33,33 +49,39 @@ namespace DEG.Shared.Twitter.Authorization
             {
                 client.Headers.Clear();
                 client.Headers.Add(HttpRequestHeader.Authorization, "Basic " + base64Token);
-                var respBytes = client.UploadValues(
-                    "https://api.twitter.com/oauth2/token",
-                    new NameValueCollection
-                    {
-                        {"grant_type", "client_credentials"}
-                    });
+                byte[] respBytes;
+                try
+                {
+                    respBytes = client.UploadValues(
+                        "https://api.twitter.com/oauth2/token",
+                        new NameValueCollection
+                            {
+                                {"grant_type", "client_credentials"}
+                            });
+                }
+                catch (Exception ex)
+                {
+                    throw new TwitterAuthenticationFailedException("Error contacting server to retrieve bearer token.", ex);
+                }
                 var response = System.Text.Encoding.UTF8.GetString(respBytes);
-                var authResponse = Json.Decode(response);
 
-                if (authResponse.token_type != "bearer")
+                dynamic authResponse;
+                try
+                {
+                    authResponse = Json.Decode(response);
+                }
+                catch
+                {
+                    authResponse = null;
+                }
+
+                if (authResponse == null || authResponse.token_type != "bearer")
                 {
                     throw new TwitterAuthenticationFailedException("Authentication attempt did not return expected bearer token.");
                 }
 
                 _bearerToken = authResponse.access_token;
             }
-        }
-
-        public NameValueCollection GetRequestHeaders()
-        {
-            if (string.IsNullOrEmpty(_bearerToken))
-                Authenticate();
-
-            return new NameValueCollection
-                       {
-                           {HttpRequestHeader.Authorization.ToString(), "Bearer " + _bearerToken}
-                       };
         }
     }
 }
