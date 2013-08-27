@@ -26,13 +26,13 @@ namespace DEG.Shared.Twitter
                               "?screen_name=" + screenName +
                               "&count=" + tweetCount;
 
-            var webGetReq = new AuthenticatedWebRequest(_auth, timelineUrl);
-
-            var timelineResp = webGetReq.GetResponse();
-            var respJson = new StreamReader(timelineResp.GetResponseStream() ?? new MemoryStream()).ReadToEnd();
-            //var timelineObj = Json.Decode(respJson);
-
-            return new Timeline(){ Tweets = JsonHelper.Parse<Tweet[]>(respJson)};
+            string json;
+            using (var client = _auth.GetAuthenticatedWebClient())
+            {
+                json = client.DownloadString(timelineUrl);
+            }
+            
+            return new Timeline(){ Tweets = JsonHelper.Parse<Tweet[]>(json)};
         }
     }
 }
