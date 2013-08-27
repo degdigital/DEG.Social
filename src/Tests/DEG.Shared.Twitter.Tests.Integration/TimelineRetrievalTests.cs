@@ -12,15 +12,18 @@ namespace DEG.Shared.Twitter.Tests.Integration
     [Category("Integration")]
     public class TimelineRetrievalTests
     {
-        private readonly Timeline _timeline;
+        private Timeline _timeline;
 
-        public TimelineRetrievalTests()
+        [SetUp]
+        public void TestSetup()
         {
             var consumerKey = ConfigurationManager.AppSettings["consumerKey"];
             var consumerSecret = ConfigurationManager.AppSettings["consumerSecret"];
 
-            consumerKey.Should().NotBeNullOrEmpty();
-            consumerSecret.Should().NotBeNullOrEmpty();
+            if (string.IsNullOrEmpty(consumerKey))
+                Assert.Inconclusive("You must set the consumer key for integration tests to run.");
+            if (string.IsNullOrEmpty(consumerSecret))
+                Assert.Inconclusive("You must set the consumer secret for integration tests to run.");
 
             var auth = new ApplicationOnlyAuth(consumerKey, consumerSecret);
             var service = new TwitterService(auth);
@@ -29,7 +32,7 @@ namespace DEG.Shared.Twitter.Tests.Integration
         }
 
         [Test]
-        public void CanRetrieveTweets()
+        public void CanRetrieveNumberOfTweetsRequested()
         {
             _timeline.Tweets.Should().HaveCount(3);
         }
@@ -38,6 +41,12 @@ namespace DEG.Shared.Twitter.Tests.Integration
         public void CanParseTweetCreatedDateTime()
         {
             _timeline.Tweets.First().Created.Should().BeAfter(default(DateTime));
+        }
+
+        [Test]
+        public void CanRetrieveTweetContent()
+        {
+            _timeline.Tweets.First().Text.Should().NotBeNullOrEmpty();
         }
     }
 }
