@@ -7,5 +7,10 @@ namespace DEG.Shared.Twitter.Exceptions
         public TwitterAuthenticationFailedException(string message) : base(message)
         {
         }
+
+        public TwitterAuthenticationFailedException(string message, Exception innerException)
+            :base(message, innerException)
+        {
+        }
     }
 }

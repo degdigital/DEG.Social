@@ -8,26 +8,6 @@ namespace DEG.Shared.Twitter.Models
     [DataContract]
     public class Tweet
     {
-        //public static Tweet Parse(dynamic src)
-        //{
-        //    DateTime createdDate;
-        //    DateTime.TryParseExact(src.created_at,
-        //                           "ddd MMM dd HH:mm:ss zz00 yyyy",
-        //                           CultureInfo.InvariantCulture,
-        //                           DateTimeStyles.AssumeUniversal,
-        //                           out createdDate);
-        //    return new Tweet()
-        //               {
-        //                   Text = src.text,
-        //                   Created = createdDate,
-        //                   FavoriteCount = src.favorite_count,
-        //                   Favorited = src.favorited,
-        //                   Id = src.id,
-        //                   RetweetCount = src.retweet_count,
-        //                   Retweeted = src.retweeted
-        //               };
-        //}
-
         [DataMember(Name = "retweeted")]
         public bool Retweeted { get; set; }
         [DataMember(Name = "retweet_count")]
@@ -42,6 +22,8 @@ namespace DEG.Shared.Twitter.Models
         public long? FavoriteCount { get; set; }
         [DataMember(Name = "text")]
         public string Text { get; set; }
+        [DataMember(Name = "user")]
+        public TwitterUser TwitterUser { get; set; }
 
         [IgnoreDataMember]
         public DateTime Created
@@ -58,5 +40,10 @@ namespace DEG.Shared.Twitter.Models
             }
         }
 
+        [IgnoreDataMember]
+        public string Url
+        {
+            get { return "https://twitter.com/" + TwitterUser.ScreenName + "/status/" + Id; }
+        }
     }
 }
