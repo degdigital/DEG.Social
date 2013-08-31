@@ -22,6 +22,8 @@ namespace DEG.Shared.Twitter.Models
         public long? FavoriteCount { get; set; }
         [DataMember(Name = "text")]
         public string Text { get; set; }
+        [DataMember(Name = "user")]
+        public TwitterUser TwitterUser { get; set; }
 
         [IgnoreDataMember]
         public DateTime Created
@@ -38,5 +40,10 @@ namespace DEG.Shared.Twitter.Models
             }
         }
 
+        [IgnoreDataMember]
+        public string Url
+        {
+            get { return "https://twitter.com/" + TwitterUser.ScreenName + "/status/" + Id; }
+        }
     }
 }
