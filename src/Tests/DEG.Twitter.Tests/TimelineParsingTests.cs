@@ -6,7 +6,7 @@ using DEG.Shared.Twitter.Utils;
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace DEG.Shared.Twitter.Tests.Unit
+namespace DEG.Twitter.Tests
 {
     [TestFixture]
     public class TimelineParsingTests

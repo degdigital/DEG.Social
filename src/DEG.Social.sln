@@ -1,17 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DEG.Shared.Twitter", "DEG.Shared.Twitter\DEG.Shared.Twitter.csproj", "{986FEB2B-D5BC-4639-BFAE-2ECC2A29F5EB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DEG.Twitter", "DEG.Twitter\DEG.Twitter.csproj", "{986FEB2B-D5BC-4639-BFAE-2ECC2A29F5EB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{42306E23-FE83-4CA8-A60D-98CCE956E180}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DEG.Shared.Twitter.Tests.Unit", "Tests\DEG.Shared.Twitter.Tests.Unit\DEG.Shared.Twitter.Tests.Unit.csproj", "{40E8479E-CC16-4B54-A3C6-94CB37371D17}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DEG.Shared.Twitter.Tests.Integration", "Tests\DEG.Shared.Twitter.Tests.Integration\DEG.Shared.Twitter.Tests.Integration.csproj", "{D8DCA41E-4ACD-45B6-8501-BE732CD16D58}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DEG.Twitter.Tests", "Tests\DEG.Twitter.Tests\DEG.Twitter.Tests.csproj", "{40E8479E-CC16-4B54-A3C6-94CB37371D17}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{8F9F256B-D062-4021-830F-48B0DA7F992D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DEG.Shared.Twitter.ConsoleAppExample", "Examples\DEG.Shared.Twitter.ConsoleAppExample\DEG.Shared.Twitter.ConsoleAppExample.csproj", "{36DC273F-656B-4DFB-94B7-F20E59E2FDCD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DEG.Twitter.ConsoleAppExample", "Examples\DEG.Twitter.ConsoleAppExample\DEG.Twitter.ConsoleAppExample.csproj", "{36DC273F-656B-4DFB-94B7-F20E59E2FDCD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{ED14DBA2-E10A-4173-B206-D720F263D2B6}"
 	ProjectSection(SolutionItems) = preProject
@@ -34,10 +32,6 @@ Global
 		{40E8479E-CC16-4B54-A3C6-94CB37371D17}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40E8479E-CC16-4B54-A3C6-94CB37371D17}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40E8479E-CC16-4B54-A3C6-94CB37371D17}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D8DCA41E-4ACD-45B6-8501-BE732CD16D58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D8DCA41E-4ACD-45B6-8501-BE732CD16D58}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D8DCA41E-4ACD-45B6-8501-BE732CD16D58}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D8DCA41E-4ACD-45B6-8501-BE732CD16D58}.Release|Any CPU.Build.0 = Release|Any CPU
 		{36DC273F-656B-4DFB-94B7-F20E59E2FDCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{36DC273F-656B-4DFB-94B7-F20E59E2FDCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36DC273F-656B-4DFB-94B7-F20E59E2FDCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -48,7 +42,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{40E8479E-CC16-4B54-A3C6-94CB37371D17} = {42306E23-FE83-4CA8-A60D-98CCE956E180}
-		{D8DCA41E-4ACD-45B6-8501-BE732CD16D58} = {42306E23-FE83-4CA8-A60D-98CCE956E180}
 		{36DC273F-656B-4DFB-94B7-F20E59E2FDCD} = {8F9F256B-D062-4021-830F-48B0DA7F992D}
 	EndGlobalSection
 EndGlobal

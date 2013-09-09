@@ -1,12 +1,11 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Linq;
 using DEG.Shared.Twitter.Models;
 using DEG.Shared.Twitter.Utils;
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace DEG.Shared.Twitter.Tests.Unit
+namespace DEG.Twitter.Tests
 {
     [TestFixture]
     public class SearchParsingTests

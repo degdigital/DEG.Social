@@ -50,9 +50,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\DEG.Shared.Twitter\DEG.Shared.Twitter.csproj">
+    <ProjectReference Include="..\..\DEG.Twitter\DEG.Twitter.csproj">
       <Project>{986feb2b-d5bc-4639-bfae-2ecc2a29f5eb}</Project>
-      <Name>DEG.Shared.Twitter</Name>
+      <Name>DEG.Twitter</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

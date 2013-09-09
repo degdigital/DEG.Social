@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Configuration;
 using System.Linq;
+using DEG.Shared.Twitter;
 using DEG.Shared.Twitter.Authorization;
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace DEG.Shared.Twitter.Tests.Integration
+namespace DEG.Twitter.Tests
 {
     [TestFixture]
     [Category("Integration")]
