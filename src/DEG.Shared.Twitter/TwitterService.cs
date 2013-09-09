@@ -8,6 +8,8 @@ namespace DEG.Shared.Twitter
     public class TwitterService
     {
         private readonly ITwitterAuth _auth;
+        private const string TweetsApiUrl = "https://api.twitter.com/1.1/search/tweets.json";
+        private const string TimelineApiUrl = "https://api.twitter.com/1.1/statuses/user_timeline.json";
 
         public TwitterService(ITwitterAuth auth)
         {
@@ -22,7 +24,7 @@ namespace DEG.Shared.Twitter
         //      https://dev.twitter.com/docs/api/1.1/get/statuses/retweets_of_me
         public Timeline GetUserTimeline(string screenName, int tweetCount = 10)
         {
-            var timelineUrl = "https://api.twitter.com/1.1/statuses/user_timeline.json" +
+            var timelineUrl = TimelineApiUrl +
                               "?screen_name=" + screenName +
                               "&count=" + tweetCount;
 
@@ -37,7 +39,7 @@ namespace DEG.Shared.Twitter
 
         public IEnumerable<Tweet> GetMentions(string screenName, int tweetCount = 10)
         {
-            var mentionsUrl = "https://api.twitter.com/1.1/search/tweets.json" +
+            var mentionsUrl = TweetsApiUrl +
                  "?q=%40" + screenName +
                  "&count=" + tweetCount;
 
@@ -53,7 +55,7 @@ namespace DEG.Shared.Twitter
 
         public IEnumerable<Tweet> GetTweetsWithHashtag(string hashtag, int tweetCount = 10)
         {
-            var hashtagUrl = "https://api.twitter.com/1.1/search/tweets.json" +
+            var hashtagUrl = TweetsApiUrl +
                              "?q=%23" + hashtag +
                              "&count=" + tweetCount;
 
