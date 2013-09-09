@@ -7,8 +7,8 @@
     <ProjectGuid>{986FEB2B-D5BC-4639-BFAE-2ECC2A29F5EB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DEG.Shared.Twitter</RootNamespace>
-    <AssemblyName>DEG.Shared.Twitter</AssemblyName>
+    <RootNamespace>DEG.Twitter</RootNamespace>
+    <AssemblyName>DEG.Twitter</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
