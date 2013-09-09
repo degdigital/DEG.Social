@@ -6,6 +6,8 @@ This module provides a simple integration with the [Twitter REST API 1.1](https:
 # Features
 
 1. Retrieve User Timeline
+2. Search tweets by User Mention
+3. Search tweets by Hashtag
 
 Yup, that's it for now. This module does very little, but it tries to do it very well.
 
