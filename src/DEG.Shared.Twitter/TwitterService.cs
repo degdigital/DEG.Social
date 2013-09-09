@@ -1,4 +1,4 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
 using DEG.Shared.Twitter.Authorization;
 using DEG.Shared.Twitter.Models;
 using DEG.Shared.Twitter.Utils;
@@ -8,6 +8,8 @@ namespace DEG.Shared.Twitter
     public class TwitterService
     {
         private readonly ITwitterAuth _auth;
+        private const string TweetsApiUrl = "https://api.twitter.com/1.1/search/tweets.json";
+        private const string TimelineApiUrl = "https://api.twitter.com/1.1/statuses/user_timeline.json";
 
         public TwitterService(ITwitterAuth auth)
         {
@@ -22,7 +24,7 @@ namespace DEG.Shared.Twitter
         //      https://dev.twitter.com/docs/api/1.1/get/statuses/retweets_of_me
         public Timeline GetUserTimeline(string screenName, int tweetCount = 10)
         {
-            var timelineUrl = "https://api.twitter.com/1.1/statuses/user_timeline.json" +
+            var timelineUrl = TimelineApiUrl +
                               "?screen_name=" + screenName +
                               "&count=" + tweetCount;
 
@@ -33,6 +35,38 @@ namespace DEG.Shared.Twitter
             }
             
             return new Timeline(){ Tweets = JsonHelper.Parse<Tweet[]>(json)};
+        }
+
+        public IEnumerable<Tweet> GetMentions(string screenName, int tweetCount = 10)
+        {
+            var mentionsUrl = TweetsApiUrl +
+                 "?q=%40" + screenName +
+                 "&count=" + tweetCount;
+
+            string json;
+            using (var client = _auth.GetAuthenticatedWebClient())
+            {
+                json = client.DownloadString(mentionsUrl);
+            }
+
+            var searchResults = JsonHelper.Parse<SearchResults>(json);
+            return searchResults.Tweets;
+        }
+
+        public IEnumerable<Tweet> GetTweetsWithHashtag(string hashtag, int tweetCount = 10)
+        {
+            var hashtagUrl = TweetsApiUrl +
+                             "?q=%23" + hashtag +
+                             "&count=" + tweetCount;
+
+            string json;
+            using (var client = _auth.GetAuthenticatedWebClient())
+            {
+                json = client.DownloadString(hashtagUrl);
+            }
+
+            var searchResults = JsonHelper.Parse<SearchResults>(json);
+            return searchResults.Tweets;
         }
     }
 }
