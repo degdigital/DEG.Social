@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Configuration;
-using DEG.Shared.Twitter.Authorization;
+using DEG.Twitter.Authentication;
 
 namespace DEG.Shared.Twitter.ConsoleAppExample
 {
@@ -30,7 +30,7 @@ namespace DEG.Shared.Twitter.ConsoleAppExample
 
             Console.WriteLine("Retrieving user timeline...");
 
-            var auth = new ApplicationOnlyAuth(consumerKey, consumerSecret);
+            var auth = new TwitterApplicationOnlyAuth(consumerKey, consumerSecret);
             var service = new TwitterService(auth);
 
             var timeline = service.GetUserTimeline(screenName, numberOfTweets);

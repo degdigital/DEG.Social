@@ -2,7 +2,7 @@
 using System.Configuration;
 using System.Linq;
 using DEG.Shared.Twitter;
-using DEG.Shared.Twitter.Authorization;
+using DEG.Twitter.Authentication;
 using FluentAssertions;
 using NUnit.Framework;
 
@@ -25,7 +25,7 @@ namespace DEG.Twitter.Tests
             if (string.IsNullOrEmpty(consumerSecret))
                 Assert.Inconclusive("You must set the consumer secret for integration tests to run.");
 
-            var auth = new ApplicationOnlyAuth(consumerKey, consumerSecret);
+            var auth = new TwitterApplicationOnlyAuth(consumerKey, consumerSecret);
             _sut = new TwitterService(auth);
 
         }

@@ -1,17 +1,17 @@
 ﻿using System.Collections.Generic;
-using DEG.Shared.Twitter.Authorization;
+using DEG.Service.Core.Authentication;
+using DEG.Service.Core.Helpers;
 using DEG.Shared.Twitter.Models;
-using DEG.Shared.Twitter.Utils;
 
 namespace DEG.Shared.Twitter
 {
     public class TwitterService
     {
-        private readonly ITwitterAuth _auth;
+        private readonly IServiceAuth _auth;
         private const string TweetsApiUrl = "https://api.twitter.com/1.1/search/tweets.json";
         private const string TimelineApiUrl = "https://api.twitter.com/1.1/statuses/user_timeline.json";
 
-        public TwitterService(ITwitterAuth auth)
+        public TwitterService(IServiceAuth auth)
         {
             _auth = auth;
         }
