@@ -16,7 +16,7 @@ namespace DEG.Service.Core.Authentication
         private string _bearerToken;
         private readonly string _authTokenUrl;
 
-        protected ApplicationOnlyAuth(string consumerKey, string consumerSecret, string authTokenUrl)
+        public ApplicationOnlyAuth(string consumerKey, string consumerSecret, string authTokenUrl)
         {
             if (string.IsNullOrEmpty(consumerKey))
                 throw new InvalidConsumerKeyException("Consumer key is required for application-only authentication.");
@@ -27,7 +27,7 @@ namespace DEG.Service.Core.Authentication
             _consumerSecret = consumerSecret;
             _authTokenUrl = authTokenUrl;
         }
-        protected ApplicationOnlyAuth(string bearerToken)
+        public ApplicationOnlyAuth(string bearerToken)
         {
             if (string.IsNullOrEmpty(bearerToken))
                 throw new InvalidBearerTokenException("Bearer token is required for application-only authentication.");

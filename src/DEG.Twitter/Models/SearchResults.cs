@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
 
-namespace DEG.Shared.Twitter.Models
+namespace DEG.Twitter.Models
 {
     [DataContract]
     public class SearchResults

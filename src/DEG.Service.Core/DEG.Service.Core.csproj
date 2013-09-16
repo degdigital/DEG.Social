@@ -44,12 +44,12 @@
   <ItemGroup>
     <Compile Include="Authentication\ApplicationOnlyAuth.cs" />
     <Compile Include="Authentication\IServiceAuth.cs" />
-    <Compile Include="Authentication\SimpleAuth.cs" />
     <Compile Include="Exceptions\AuthenticationFailedException.cs" />
     <Compile Include="Exceptions\InvalidApiKeyException.cs" />
     <Compile Include="Exceptions\InvalidBearerTokenException.cs" />
     <Compile Include="Exceptions\InvalidConsumerKeyException.cs" />
     <Compile Include="Exceptions\InvalidConsumerSecretException.cs" />
+    <Compile Include="GenericRestService.cs" />
     <Compile Include="Helpers\JsonHelper.cs" />
     <Compile Include="Models\ClientCredentialsResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

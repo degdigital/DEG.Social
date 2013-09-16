@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Runtime.Serialization;
 
-namespace DEG.Shared.Twitter.Models
+namespace DEG.Twitter.Models
 {
     //https://dev.twitter.com/docs/platform-objects/tweets
     [DataContract]

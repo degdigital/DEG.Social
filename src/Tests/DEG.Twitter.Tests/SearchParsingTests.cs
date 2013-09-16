@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Linq;
 using DEG.Service.Core.Helpers;
-using DEG.Shared.Twitter.Models;
+using DEG.Twitter.Models;
 using FluentAssertions;
 using NUnit.Framework;
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Configuration;
+using DEG.Twitter;
 using DEG.Twitter.Authentication;
 
 namespace DEG.Shared.Twitter.ConsoleAppExample

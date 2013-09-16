@@ -33,21 +33,21 @@ namespace DEG.Twitter.Tests
         [Test]
         public void CanRetrieveNumberOfTweetsRequested()
         {
-            var timeline = _sut.GetUserTimeline("PatrickDelancy", 3);
+            var timeline = _sut.GetUserTimeline("DEGDigital", 3);
             timeline.Tweets.Should().HaveCount(3);
         }
 
         [Test]
         public void CanParseTweetCreatedDateTime()
         {
-            var timeline = _sut.GetUserTimeline("PatrickDelancy", 3);
+            var timeline = _sut.GetUserTimeline("DEGDigital", 3);
             timeline.Tweets.First().Created.Should().BeAfter(default(DateTime));
         }
 
         [Test]
         public void CanRetrieveTweetContent()
         {
-            var timeline = _sut.GetUserTimeline("PatrickDelancy", 3);
+            var timeline = _sut.GetUserTimeline("DEGDigital", 3);
             timeline.Tweets.First().Text.Should().NotBeNullOrEmpty();
         }
 
@@ -68,7 +68,7 @@ namespace DEG.Twitter.Tests
         [Test]
         public void CanReadScreenName()
         {
-            var timeline = _sut.GetUserTimeline("PatrickDelancy", 3);
+            var timeline = _sut.GetUserTimeline("DEGDigital", 3);
             timeline.Tweets.First().TwitterUser.ScreenName.Should().NotBeNullOrEmpty();
         }
     }
