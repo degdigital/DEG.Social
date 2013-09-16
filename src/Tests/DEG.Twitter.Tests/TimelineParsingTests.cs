@@ -1,8 +1,8 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
-using DEG.Shared.Twitter.Models;
-using DEG.Shared.Twitter.Utils;
+using DEG.Service.Core.Helpers;
+using DEG.Twitter.Models;
 using FluentAssertions;
 using NUnit.Framework;
 

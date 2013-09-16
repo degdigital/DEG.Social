@@ -43,17 +43,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Authorization\ApplicationOnlyAuth.cs" />
-    <Compile Include="Authorization\ITwitterAuth.cs" />
-    <Compile Include="Exceptions\TwitterAuthenticationFailedException.cs" />
+    <Compile Include="Authentication\TwitterApplicationOnlyAuth.cs" />
     <Compile Include="Models\SearchResults.cs" />
     <Compile Include="Models\Timeline.cs" />
     <Compile Include="Models\Tweet.cs" />
     <Compile Include="Models\TwitterUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TwitterService.cs" />
-    <Compile Include="Utils\JsonHelper.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DEG.Service.Core\DEG.Service.Core.csproj">
+      <Project>{8374b5bf-9fca-4069-9829-1135e3378702}</Project>
+      <Name>DEG.Service.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

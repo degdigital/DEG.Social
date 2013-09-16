@@ -1,33 +1,44 @@
-﻿using System;
+using System;
 using System.Collections.Specialized;
+using System.Linq;
 using System.Net;
 using System.Web;
-using System.Web.Helpers;
-using DEG.Shared.Twitter.Exceptions;
+using DEG.Service.Core.Exceptions;
+using DEG.Service.Core.Helpers;
+using DEG.Service.Core.Models;
 
-namespace DEG.Shared.Twitter.Authorization
+namespace DEG.Service.Core.Authentication
 {
-    // https://dev.twitter.com/docs/auth/application-only-auth
-    public class ApplicationOnlyAuth : ITwitterAuth
+    public class ApplicationOnlyAuth : IServiceAuth
     {
         private readonly string _consumerKey;
         private readonly string _consumerSecret;
         private string _bearerToken;
+        private readonly string _authTokenUrl;
 
-        public ApplicationOnlyAuth(string consumerKey, string consumerSecret)
+        public ApplicationOnlyAuth(string consumerKey, string consumerSecret, string authTokenUrl)
         {
+            if (string.IsNullOrEmpty(consumerKey))
+                throw new InvalidConsumerKeyException("Consumer key is required for application-only authentication.");
+            if (string.IsNullOrEmpty(consumerSecret))
+                throw new InvalidConsumerSecretException("Consumer secret is required for application-only authentication.");
+
             _consumerKey = consumerKey;
             _consumerSecret = consumerSecret;
+            _authTokenUrl = authTokenUrl;
         }
         public ApplicationOnlyAuth(string bearerToken)
         {
+            if (string.IsNullOrEmpty(bearerToken))
+                throw new InvalidBearerTokenException("Bearer token is required for application-only authentication.");
+
             _bearerToken = bearerToken;
         }
 
         public WebClient GetAuthenticatedWebClient()
         {
             if (string.IsNullOrEmpty(_bearerToken))
-                RetrieveBearerToken();
+                _bearerToken = RetrieveBearerToken();
 
             var client = new WebClient();
             client.Headers.Clear();
@@ -36,7 +47,7 @@ namespace DEG.Shared.Twitter.Authorization
             return client;
         }
 
-        private void RetrieveBearerToken()
+        protected virtual string RetrieveBearerToken()
         {
             var encodedConsumerKey = HttpUtility.UrlEncode(_consumerKey);
             var encodedConsumerSecret = HttpUtility.UrlEncode(_consumerSecret);
@@ -53,7 +64,7 @@ namespace DEG.Shared.Twitter.Authorization
                 try
                 {
                     respBytes = client.UploadValues(
-                        "https://api.twitter.com/oauth2/token",
+                        _authTokenUrl,
                         new NameValueCollection
                             {
                                 {"grant_type", "client_credentials"}
@@ -61,26 +72,32 @@ namespace DEG.Shared.Twitter.Authorization
                 }
                 catch (Exception ex)
                 {
-                    throw new TwitterAuthenticationFailedException("Error contacting server to retrieve bearer token.", ex);
+                    throw new AuthenticationFailedException("Error contacting server to retrieve bearer token.", ex);
                 }
                 var response = System.Text.Encoding.UTF8.GetString(respBytes);
 
-                dynamic authResponse;
+                ClientCredentialsResponse authResponse;
                 try
                 {
-                    authResponse = Json.Decode(response);
+                    authResponse =  JsonHelper.Parse<ClientCredentialsResponse>(response);
                 }
                 catch
                 {
                     authResponse = null;
                 }
 
-                if (authResponse == null || authResponse.token_type != "bearer")
+                if (authResponse == null || authResponse.TokenType != "bearer")
                 {
-                    throw new TwitterAuthenticationFailedException("Authentication attempt did not return expected bearer token.");
+                    var message = "Authentication attempt did not return expected bearer token.";
+                    if (authResponse == null)
+                        message += " Response: " + response;
+                    else if (authResponse.Errors != null && authResponse.Errors.Any())
+                        message += " Errors: " + string.Join(", ", authResponse.Errors.Select(x => x.Message));
+
+                    throw new AuthenticationFailedException(message);
                 }
 
-                _bearerToken = authResponse.access_token;
+                return authResponse.AccessToken;
             }
         }
     }

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DEG.Shared.Twitter.Models
+namespace DEG.Twitter.Models
 {
     public class Timeline
     {
