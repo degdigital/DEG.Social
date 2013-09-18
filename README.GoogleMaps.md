@@ -14,6 +14,7 @@ Yup, that's it for now. This module does very little, but it tries to do it very
 This module was developed out of necessity. Most of the .NET libraries were cumbersome or over-complicated for our needs.
 
 These are the primary goals for this project:
+
 1. Simplicity: The library should be easy to use, and the API should be intuitive.
 2. Stability: As with all software, it will fail sometimes. When it does, the cause should be known, and the remedy should be clear.
 3. Readability: The code should be clean and well organized, so that others can enjoy it.
