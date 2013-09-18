@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Configuration;
 using System.Linq;
-using DEG.Shared.Twitter;
 using DEG.Twitter.Authentication;
 using FluentAssertions;
 using NUnit.Framework;

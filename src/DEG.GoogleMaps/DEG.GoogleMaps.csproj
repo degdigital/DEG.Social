@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8374B5BF-9FCA-4069-9829-1135E3378702}</ProjectGuid>
+    <ProjectGuid>{C2E073A1-E0E1-4C5B-B831-8DA79FE90E2C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DEG.Service.Core</RootNamespace>
-    <AssemblyName>DEG.Service.Core</AssemblyName>
+    <RootNamespace>DEG.GoogleMaps</RootNamespace>
+    <AssemblyName>DEG.GoogleMaps</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -42,21 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Authentication\ApplicationOnlyAuth.cs" />
-    <Compile Include="Authentication\NoAuthentication.cs" />
-    <Compile Include="Authentication\SimpleKeyAuth.cs" />
-    <Compile Include="Authentication\IServiceAuth.cs" />
-    <Compile Include="Exceptions\AuthenticationFailedException.cs" />
-    <Compile Include="Exceptions\InvalidApiKeyException.cs" />
-    <Compile Include="Exceptions\InvalidBearerTokenException.cs" />
-    <Compile Include="Exceptions\InvalidConsumerKeyException.cs" />
-    <Compile Include="Exceptions\InvalidConsumerSecretException.cs" />
-    <Compile Include="GenericRestService.cs" />
-    <Compile Include="Helpers\JsonHelper.cs" />
-    <Compile Include="Models\ClientCredentialsResponse.cs" />
+    <Compile Include="Authentication\GoogleBusinessLicenseAuth.cs" />
+    <Compile Include="Authentication\GoogleSimpleApiAccess.cs" />
+    <Compile Include="GeocodingService.cs" />
+    <Compile Include="Models\GeocodingResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\DEG.Service.Core\DEG.Service.Core.csproj">
+      <Project>{8374b5bf-9fca-4069-9829-1135e3378702}</Project>
+      <Name>DEG.Service.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
