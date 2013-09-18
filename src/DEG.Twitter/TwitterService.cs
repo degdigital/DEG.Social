@@ -5,7 +5,14 @@ using DEG.Twitter.Models;
 
 namespace DEG.Twitter
 {
-    public class TwitterService : GenericRestService
+    public interface ITwitterService
+    {
+        Timeline GetUserTimeline(string screenName, int tweetCount = 10);
+        IEnumerable<Tweet> GetMentions(string screenName, int tweetCount = 10);
+        IEnumerable<Tweet> GetTweetsWithHashtag(string hashtag, int tweetCount = 10);
+    }
+
+    public class TwitterService : GenericRestService, ITwitterService
     {
         private const string TwitterApiBaseUrl = "https://api.twitter.com/1.1/";
         private const string TweetsApiUrl = TwitterApiBaseUrl + "search/tweets.json";
