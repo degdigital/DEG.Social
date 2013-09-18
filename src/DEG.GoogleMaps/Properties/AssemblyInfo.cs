@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("DEG.GoogleMaps")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Digital Evolution Group")]
+[assembly: AssemblyCompany("DEG")]
 [assembly: AssemblyProduct("DEG.GoogleMaps")]
-[assembly: AssemblyCopyright("Copyright © Digital Evolution Group 2013")]
+[assembly: AssemblyCopyright("Copyright © DEG 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
