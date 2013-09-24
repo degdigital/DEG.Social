@@ -3,12 +3,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{40E8479E-CC16-4B54-A3C6-94CB37371D17}</ProjectGuid>
+    <ProjectGuid>{3D0DA6BA-0AB2-421C-9FB7-7BF093DDF50C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DEG.Twitter.Tests</RootNamespace>
-    <AssemblyName>DEG.Twitter.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>DEG.GoogleMaps.Tests</RootNamespace>
+    <AssemblyName>DEG.GoogleMaps.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -38,15 +38,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="FluentAssertions">
-      <HintPath>..\..\packages\FluentAssertions.2.1.0.0\lib\net45\FluentAssertions.dll</HintPath>
+      <HintPath>..\..\packages\FluentAssertions.2.1.0.0\lib\net40\FluentAssertions.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="nunit.framework">
       <HintPath>..\..\packages\NUnit.2.6.2\lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
@@ -63,32 +63,26 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="SearchParsingTests.cs" />
-    <Compile Include="TimelineParsingTests.cs" />
+    <Compile Include="GeocodingServiceTests.cs" />
+    <Compile Include="LookupByAddressParsingTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TwitterServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="Data\TwitterTestSearchJson.json">
+    <Content Include="Data\Response1.xml" />
+    <None Include="Data\Response1.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\DEG.GoogleMaps\DEG.GoogleMaps.csproj">
+      <Project>{c2e073a1-e0e1-4c5b-b831-8da79fe90e2c}</Project>
+      <Name>DEG.GoogleMaps</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\DEG.ServiceCore\DEG.ServiceCore.csproj">
-      <Project>{8374B5BF-9FCA-4069-9829-1135E3378702}</Project>
+      <Project>{8374b5bf-9fca-4069-9829-1135e3378702}</Project>
       <Name>DEG.ServiceCore</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\DEG.Twitter\DEG.Twitter.csproj">
-      <Project>{986FEB2B-D5BC-4639-BFAE-2ECC2A29F5EB}</Project>
-      <Name>DEG.Twitter</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Data\TwitterTestTimelineJson.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

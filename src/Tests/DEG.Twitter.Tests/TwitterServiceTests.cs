@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Configuration;
 using System.Linq;
-using DEG.Shared.Twitter;
-using DEG.Shared.Twitter.Authorization;
+using DEG.Twitter.Authentication;
 using FluentAssertions;
 using NUnit.Framework;
 
@@ -25,7 +24,7 @@ namespace DEG.Twitter.Tests
             if (string.IsNullOrEmpty(consumerSecret))
                 Assert.Inconclusive("You must set the consumer secret for integration tests to run.");
 
-            var auth = new ApplicationOnlyAuth(consumerKey, consumerSecret);
+            var auth = new TwitterApplicationOnlyAuth(consumerKey, consumerSecret);
             _sut = new TwitterService(auth);
 
         }
@@ -33,21 +32,21 @@ namespace DEG.Twitter.Tests
         [Test]
         public void CanRetrieveNumberOfTweetsRequested()
         {
-            var timeline = _sut.GetUserTimeline("PatrickDelancy", 3);
+            var timeline = _sut.GetUserTimeline("DEGDigital", 3);
             timeline.Tweets.Should().HaveCount(3);
         }
 
         [Test]
         public void CanParseTweetCreatedDateTime()
         {
-            var timeline = _sut.GetUserTimeline("PatrickDelancy", 3);
+            var timeline = _sut.GetUserTimeline("DEGDigital", 3);
             timeline.Tweets.First().Created.Should().BeAfter(default(DateTime));
         }
 
         [Test]
         public void CanRetrieveTweetContent()
         {
-            var timeline = _sut.GetUserTimeline("PatrickDelancy", 3);
+            var timeline = _sut.GetUserTimeline("DEGDigital", 3);
             timeline.Tweets.First().Text.Should().NotBeNullOrEmpty();
         }
 
@@ -68,7 +67,7 @@ namespace DEG.Twitter.Tests
         [Test]
         public void CanReadScreenName()
         {
-            var timeline = _sut.GetUserTimeline("PatrickDelancy", 3);
+            var timeline = _sut.GetUserTimeline("DEGDigital", 3);
             timeline.Tweets.First().TwitterUser.ScreenName.Should().NotBeNullOrEmpty();
         }
     }

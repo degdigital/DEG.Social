@@ -1,20 +1,25 @@
 ﻿using System.Collections.Generic;
-using DEG.Shared.Twitter.Authorization;
-using DEG.Shared.Twitter.Models;
-using DEG.Shared.Twitter.Utils;
+using DEG.ServiceCore;
+using DEG.ServiceCore.Authentication;
+using DEG.Twitter.Models;
 
-namespace DEG.Shared.Twitter
+namespace DEG.Twitter
 {
-    public class TwitterService
+    public interface ITwitterService
     {
-        private readonly ITwitterAuth _auth;
-        private const string TweetsApiUrl = "https://api.twitter.com/1.1/search/tweets.json";
-        private const string TimelineApiUrl = "https://api.twitter.com/1.1/statuses/user_timeline.json";
+        Timeline GetUserTimeline(string screenName, int tweetCount = 10);
+        IEnumerable<Tweet> GetMentions(string screenName, int tweetCount = 10);
+        IEnumerable<Tweet> GetTweetsWithHashtag(string hashtag, int tweetCount = 10);
+    }
 
-        public TwitterService(ITwitterAuth auth)
-        {
-            _auth = auth;
-        }
+    public class TwitterService : ServiceBase, ITwitterService
+    {
+        private const string TwitterApiBaseUrl = "https://api.twitter.com/1.1/";
+        private const string TweetsApiUrl = TwitterApiBaseUrl + "search/tweets.json";
+        private const string TimelineApiUrl = TwitterApiBaseUrl + "statuses/user_timeline.json";
+
+        public TwitterService(IServiceAuth auth) : base(auth)
+        {}
 
         //https://dev.twitter.com/docs/api/1.1/get/statuses/user_timeline
         //
@@ -28,13 +33,7 @@ namespace DEG.Shared.Twitter
                               "?screen_name=" + screenName +
                               "&count=" + tweetCount;
 
-            string json;
-            using (var client = _auth.GetAuthenticatedWebClient())
-            {
-                json = client.DownloadString(timelineUrl);
-            }
-            
-            return new Timeline(){ Tweets = JsonHelper.Parse<Tweet[]>(json)};
+            return new Timeline {Tweets = GetObject<Tweet[]>(timelineUrl)};
         }
 
         public IEnumerable<Tweet> GetMentions(string screenName, int tweetCount = 10)
@@ -43,13 +42,7 @@ namespace DEG.Shared.Twitter
                  "?q=%40" + screenName +
                  "&count=" + tweetCount;
 
-            string json;
-            using (var client = _auth.GetAuthenticatedWebClient())
-            {
-                json = client.DownloadString(mentionsUrl);
-            }
-
-            var searchResults = JsonHelper.Parse<SearchResults>(json);
+            var searchResults = GetObject<SearchResults>(mentionsUrl);
             return searchResults.Tweets;
         }
 
@@ -59,13 +52,7 @@ namespace DEG.Shared.Twitter
                              "?q=%23" + hashtag +
                              "&count=" + tweetCount;
 
-            string json;
-            using (var client = _auth.GetAuthenticatedWebClient())
-            {
-                json = client.DownloadString(hashtagUrl);
-            }
-
-            var searchResults = JsonHelper.Parse<SearchResults>(json);
+            var searchResults = GetObject<SearchResults>(hashtagUrl);
             return searchResults.Tweets;
         }
     }

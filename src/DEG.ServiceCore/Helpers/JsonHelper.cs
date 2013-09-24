@@ -1,8 +1,8 @@
-﻿using System.IO;
+using System.IO;
 using System.Runtime.Serialization.Json;
 using System.Text;
 
-namespace DEG.Shared.Twitter.Utils
+namespace DEG.ServiceCore.Helpers
 {
     public class JsonHelper
     {

@@ -4,16 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{36DC273F-656B-4DFB-94B7-F20E59E2FDCD}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{8374B5BF-9FCA-4069-9829-1135E3378702}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DEG.Shared.Twitter.ConsoleAppExample</RootNamespace>
-    <AssemblyName>DEG.Shared.Twitter.ConsoleAppExample</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>DEG.ServiceCore</RootNamespace>
+    <AssemblyName>DEG.ServiceCore</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -21,10 +21,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -34,8 +32,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,22 +42,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Authentication\ApplicationOnlyAuth.cs" />
+    <Compile Include="Authentication\NoAuthentication.cs" />
+    <Compile Include="Authentication\SimpleKeyAuth.cs" />
+    <Compile Include="Authentication\IServiceAuth.cs" />
+    <Compile Include="Exceptions\AuthenticationFailedException.cs" />
+    <Compile Include="Exceptions\InvalidApiKeyException.cs" />
+    <Compile Include="Exceptions\InvalidBearerTokenException.cs" />
+    <Compile Include="Exceptions\InvalidConsumerKeyException.cs" />
+    <Compile Include="Exceptions\InvalidConsumerSecretException.cs" />
+    <Compile Include="ServiceBase.cs" />
+    <Compile Include="Helpers\JsonHelper.cs" />
+    <Compile Include="Models\ClientCredentialsResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\DEG.ServiceCore\DEG.ServiceCore.csproj">
-      <Project>{8374B5BF-9FCA-4069-9829-1135E3378702}</Project>
-      <Name>DEG.ServiceCore</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\DEG.Twitter\DEG.Twitter.csproj">
-      <Project>{986feb2b-d5bc-4639-bfae-2ecc2a29f5eb}</Project>
-      <Name>DEG.Twitter</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
