@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using DEG.GoogleMaps.Models;
-using DEG.Service.Core;
-using DEG.Service.Core.Authentication;
+using DEG.ServiceCore;
+using DEG.ServiceCore.Authentication;
 
 namespace DEG.GoogleMaps
 {
@@ -12,7 +12,7 @@ namespace DEG.GoogleMaps
 
     //https://developers.google.com/maps/documentation/geocoding/
     //Google Maps API v3
-    public class GeocodingService : GenericRestService, IGeocodingService
+    public class GeocodingService : ServiceBase, IGeocodingService
     {
         private readonly bool _deviceHasGpsSensor;
         internal const string GeocodingUrl = "http://maps.googleapis.com/maps/api/geocode/json";

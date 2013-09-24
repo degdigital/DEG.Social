@@ -7,8 +7,8 @@
     <ProjectGuid>{F1DCC3AF-58DA-411E-854A-E575A82739A4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DEG.Service.Core.Tests</RootNamespace>
-    <AssemblyName>DEG.Service.Core.Tests</AssemblyName>
+    <RootNamespace>DEG.ServiceCore.Tests</RootNamespace>
+    <AssemblyName>DEG.ServiceCore.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
@@ -58,9 +58,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\DEG.Service.Core\DEG.Service.Core.csproj">
+    <ProjectReference Include="..\..\DEG.ServiceCore\DEG.ServiceCore.csproj">
       <Project>{8374b5bf-9fca-4069-9829-1135e3378702}</Project>
-      <Name>DEG.Service.Core</Name>
+      <Name>DEG.ServiceCore</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

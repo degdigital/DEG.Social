@@ -1,13 +1,13 @@
-﻿using DEG.Service.Core.Authentication;
-using DEG.Service.Core.Helpers;
+﻿using DEG.ServiceCore.Authentication;
+using DEG.ServiceCore.Helpers;
 
-namespace DEG.Service.Core
+namespace DEG.ServiceCore
 {
-    public class GenericRestService
+    public class ServiceBase
     {
         private readonly IServiceAuth _auth;
 
-        public GenericRestService(IServiceAuth auth)
+        public ServiceBase(IServiceAuth auth)
         {
             _auth = auth;
         }

@@ -1,4 +1,4 @@
-﻿using DEG.Service.Core.Authentication;
+﻿using DEG.ServiceCore.Authentication;
 using FluentAssertions;
 using NUnit.Framework;
 

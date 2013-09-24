@@ -2,7 +2,7 @@ using System.IO;
 using System.Runtime.Serialization.Json;
 using System.Text;
 
-namespace DEG.Service.Core.Helpers
+namespace DEG.ServiceCore.Helpers
 {
     public class JsonHelper
     {

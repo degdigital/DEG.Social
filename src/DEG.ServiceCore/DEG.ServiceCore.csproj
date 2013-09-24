@@ -7,8 +7,8 @@
     <ProjectGuid>{8374B5BF-9FCA-4069-9829-1135E3378702}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DEG.Service.Core</RootNamespace>
-    <AssemblyName>DEG.Service.Core</AssemblyName>
+    <RootNamespace>DEG.ServiceCore</RootNamespace>
+    <AssemblyName>DEG.ServiceCore</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -51,7 +51,7 @@
     <Compile Include="Exceptions\InvalidBearerTokenException.cs" />
     <Compile Include="Exceptions\InvalidConsumerKeyException.cs" />
     <Compile Include="Exceptions\InvalidConsumerSecretException.cs" />
-    <Compile Include="GenericRestService.cs" />
+    <Compile Include="ServiceBase.cs" />
     <Compile Include="Helpers\JsonHelper.cs" />
     <Compile Include="Models\ClientCredentialsResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

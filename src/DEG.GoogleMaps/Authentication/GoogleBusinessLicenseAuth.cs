@@ -1,4 +1,4 @@
-﻿using DEG.Service.Core.Authentication;
+﻿using DEG.ServiceCore.Authentication;
 
 namespace DEG.GoogleMaps.Authentication
 {

@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Linq;
 using DEG.GoogleMaps.Models;
-using DEG.Service.Core.Helpers;
+using DEG.ServiceCore.Helpers;
 using FluentAssertions;
 using NUnit.Framework;
 

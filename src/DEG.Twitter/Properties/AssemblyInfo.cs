@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DEG.Shared.Twitter")]
+[assembly: AssemblyTitle("DEG.Twitter")]
 [assembly: AssemblyDescription("Simple library for using the Twitter Rest API.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("DEG")]
-[assembly: AssemblyProduct("DEG.Shared.Twitter")]
+[assembly: AssemblyProduct("DEG.Twitter")]
 [assembly: AssemblyCopyright("Copyright © DEG 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

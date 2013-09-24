@@ -1,6 +1,6 @@
 using System;
 
-namespace DEG.Service.Core.Exceptions
+namespace DEG.ServiceCore.Exceptions
 {
     public class InvalidConsumerSecretException : Exception
     {

@@ -79,9 +79,9 @@
       <Project>{c2e073a1-e0e1-4c5b-b831-8da79fe90e2c}</Project>
       <Name>DEG.GoogleMaps</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\DEG.Service.Core\DEG.Service.Core.csproj">
+    <ProjectReference Include="..\..\DEG.ServiceCore\DEG.ServiceCore.csproj">
       <Project>{8374b5bf-9fca-4069-9829-1135e3378702}</Project>
-      <Name>DEG.Service.Core</Name>
+      <Name>DEG.ServiceCore</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

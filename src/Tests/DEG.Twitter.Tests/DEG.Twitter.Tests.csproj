@@ -76,9 +76,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\DEG.Service.Core\DEG.Service.Core.csproj">
+    <ProjectReference Include="..\..\DEG.ServiceCore\DEG.ServiceCore.csproj">
       <Project>{8374B5BF-9FCA-4069-9829-1135E3378702}</Project>
-      <Name>DEG.Service.Core</Name>
+      <Name>DEG.ServiceCore</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\DEG.Twitter\DEG.Twitter.csproj">
       <Project>{986FEB2B-D5BC-4639-BFAE-2ECC2A29F5EB}</Project>

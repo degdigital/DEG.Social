@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using DEG.Service.Core;
-using DEG.Service.Core.Authentication;
+using DEG.ServiceCore;
+using DEG.ServiceCore.Authentication;
 using DEG.Twitter.Models;
 
 namespace DEG.Twitter
@@ -12,7 +12,7 @@ namespace DEG.Twitter
         IEnumerable<Tweet> GetTweetsWithHashtag(string hashtag, int tweetCount = 10);
     }
 
-    public class TwitterService : GenericRestService, ITwitterService
+    public class TwitterService : ServiceBase, ITwitterService
     {
         private const string TwitterApiBaseUrl = "https://api.twitter.com/1.1/";
         private const string TweetsApiUrl = TwitterApiBaseUrl + "search/tweets.json";

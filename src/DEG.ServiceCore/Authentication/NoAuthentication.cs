@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace DEG.Service.Core.Authentication
+namespace DEG.ServiceCore.Authentication
 {
     public class NoAuthentication : IServiceAuth
     {

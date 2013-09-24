@@ -3,11 +3,11 @@ using System.Collections.Specialized;
 using System.Linq;
 using System.Net;
 using System.Web;
-using DEG.Service.Core.Exceptions;
-using DEG.Service.Core.Helpers;
-using DEG.Service.Core.Models;
+using DEG.ServiceCore.Exceptions;
+using DEG.ServiceCore.Helpers;
+using DEG.ServiceCore.Models;
 
-namespace DEG.Service.Core.Authentication
+namespace DEG.ServiceCore.Authentication
 {
     public class ApplicationOnlyAuth : IServiceAuth
     {

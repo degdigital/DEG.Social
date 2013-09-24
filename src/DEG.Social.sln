@@ -18,9 +18,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{ED14DB
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DEG.Service.Core", "DEG.Service.Core\DEG.Service.Core.csproj", "{8374B5BF-9FCA-4069-9829-1135E3378702}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DEG.ServiceCore", "DEG.ServiceCore\DEG.ServiceCore.csproj", "{8374B5BF-9FCA-4069-9829-1135E3378702}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DEG.Service.Core.Tests", "Tests\DEG.Service.Core.Tests\DEG.Service.Core.Tests.csproj", "{F1DCC3AF-58DA-411E-854A-E575A82739A4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DEG.ServiceCore.Tests", "Tests\DEG.ServiceCore.Tests\DEG.ServiceCore.Tests.csproj", "{F1DCC3AF-58DA-411E-854A-E575A82739A4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DEG.GoogleMaps", "DEG.GoogleMaps\DEG.GoogleMaps.csproj", "{C2E073A1-E0E1-4C5B-B831-8DA79FE90E2C}"
 EndProject

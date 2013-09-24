@@ -52,9 +52,9 @@
     <Compile Include="TwitterService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DEG.Service.Core\DEG.Service.Core.csproj">
+    <ProjectReference Include="..\DEG.ServiceCore\DEG.ServiceCore.csproj">
       <Project>{8374b5bf-9fca-4069-9829-1135e3378702}</Project>
-      <Name>DEG.Service.Core</Name>
+      <Name>DEG.ServiceCore</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

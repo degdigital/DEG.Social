@@ -1,7 +1,7 @@
 using System.Net;
-using DEG.Service.Core.Exceptions;
+using DEG.ServiceCore.Exceptions;
 
-namespace DEG.Service.Core.Authentication
+namespace DEG.ServiceCore.Authentication
 {
     public class SimpleKeyAuth : IServiceAuth
     {

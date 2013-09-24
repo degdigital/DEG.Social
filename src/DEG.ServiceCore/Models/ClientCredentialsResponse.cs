@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
 
-namespace DEG.Service.Core.Models
+namespace DEG.ServiceCore.Models
 {
     [DataContract]
     public class ClientCredentialsResponse
