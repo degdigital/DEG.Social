@@ -6,6 +6,7 @@ This module provides a simple integration with the [Google Maps API](https://dev
 # Features
 
 1. Geocoding lookup by address
+1. Geocoding lookup by address, within bounding box
 
 Yup, that's it for now. This module does very little, but it tries to do it very well.
 
