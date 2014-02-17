@@ -91,12 +91,12 @@ namespace DEG.GoogleMaps.Models
 
     public class GeocodingGeometryLocationBounds
     {
-        public GeocodingGeometryLocation UpperLeft { get; set; }
-        public GeocodingGeometryLocation LowerRight { get; set; }
+        public GeocodingGeometryLocation Southwest { get; set; }
+        public GeocodingGeometryLocation Northeast { get; set; }
 
         public override string ToString()
         {
-            return string.Format("{0}|{1}", UpperLeft, LowerRight);
+            return string.Format("{0}|{1}", Southwest, Northeast);
         }
     }
 

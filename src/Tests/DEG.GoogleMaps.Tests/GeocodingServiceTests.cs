@@ -27,8 +27,8 @@ namespace DEG.GoogleMaps.Tests
             var result = service
                 .LookupByAddressInBounds("Balmoral", new GeocodingGeometryLocationBounds
                                                          {
-                                                             UpperLeft = new GeocodingGeometryLocation { Latitude = 72.228294m, Longitude = -169.136192m },
-                                                             LowerRight = new GeocodingGeometryLocation { Latitude = 20.635313m, Longitude = -47.878356m }
+                                                             Southwest = new GeocodingGeometryLocation { Latitude = 72.228294m, Longitude = -169.136192m },
+                                                             Northeast = new GeocodingGeometryLocation { Latitude = 20.635313m, Longitude = -47.878356m }
                                                          }, true);
 
             result.Results.Should().BeEmpty();
@@ -42,8 +42,8 @@ namespace DEG.GoogleMaps.Tests
             var result = service
                 .LookupByAddressInBounds("Balmoral", new GeocodingGeometryLocationBounds
                 {
-                    UpperLeft = new GeocodingGeometryLocation { Latitude = 72.228294m, Longitude = -169.136192m },
-                    LowerRight = new GeocodingGeometryLocation { Latitude = 20.635313m, Longitude = -47.878356m }
+                    Southwest = new GeocodingGeometryLocation { Latitude = 72.228294m, Longitude = -169.136192m },
+                    Northeast = new GeocodingGeometryLocation { Latitude = 20.635313m, Longitude = -47.878356m }
                 });
 
             result.Results.Should().NotBeEmpty();

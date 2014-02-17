@@ -39,8 +39,8 @@ namespace DEG.GoogleMaps
                       "?sensor=" + _deviceHasGpsSensor.ToString().ToLowerInvariant() +
                       "&address=" + HttpUtility.UrlEncode(address) +
                       string.Format("&bounds={0},{1}|{2},{3}",
-                                    bounds.UpperLeft.Latitude, bounds.UpperLeft.Longitude,
-                                    bounds.LowerRight.Latitude, bounds.LowerRight.Longitude);
+                                    bounds.Southwest.Latitude, bounds.Southwest.Longitude,
+                                    bounds.Northeast.Latitude, bounds.Northeast.Longitude);
 
             var result = GetObject<GeocodingResponse>(url);
             if (!strict) return result;
@@ -53,10 +53,10 @@ namespace DEG.GoogleMaps
 
         private static bool LocationIsWithinBounds(GeocodingGeometryLocation location, GeocodingGeometryLocationBounds bounds)
         {
-            if (location.Latitude < bounds.UpperLeft.Latitude) return false;
-            if (location.Latitude > bounds.LowerRight.Latitude) return false;
-            if (location.Longitude < bounds.UpperLeft.Longitude) return false;
-            if (location.Longitude > bounds.LowerRight.Longitude) return false;
+            if (location.Latitude < bounds.Southwest.Latitude) return false;
+            if (location.Latitude > bounds.Northeast.Latitude) return false;
+            if (location.Longitude < bounds.Southwest.Longitude) return false;
+            if (location.Longitude > bounds.Northeast.Longitude) return false;
             return true;
         }
     }
