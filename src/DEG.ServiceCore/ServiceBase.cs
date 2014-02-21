@@ -14,14 +14,25 @@ namespace DEG.ServiceCore
 
         public T GetObject<T>(string url) where T : class 
         {
-            string json;
+            var resultString = GetString(url);
+
+            T results;
+            if (JsonHelper.TryParse(resultString, out results))
+                return results;
+            if (XmlHelper.TryParse(resultString, out results))
+                return results;
+
+            return default(T);
+        }
+
+        protected string GetString(string url)
+        {
+            string resultString;
             using (var client = _auth.GetAuthenticatedWebClient())
             {
-                json = client.DownloadString(url);
+                resultString = client.DownloadString(url);
             }
-
-            var searchResults = JsonHelper.Parse<T>(json);
-            return searchResults;
+            return resultString;
         }
     }
 }

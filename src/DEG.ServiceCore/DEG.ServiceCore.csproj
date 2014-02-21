@@ -51,6 +51,7 @@
     <Compile Include="Exceptions\InvalidBearerTokenException.cs" />
     <Compile Include="Exceptions\InvalidConsumerKeyException.cs" />
     <Compile Include="Exceptions\InvalidConsumerSecretException.cs" />
+    <Compile Include="Helpers\XmlHelper.cs" />
     <Compile Include="ServiceBase.cs" />
     <Compile Include="Helpers\JsonHelper.cs" />
     <Compile Include="Models\ClientCredentialsResponse.cs" />

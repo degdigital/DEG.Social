@@ -1,18 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
-using System.Runtime.Serialization.Json;
+using System.Linq;
+using System.Xml.Serialization;
 using System.Text;
 
 namespace DEG.ServiceCore.Helpers
 {
-    public class JsonHelper
+    public class XmlHelper
     {
         public static string Stringify(object toSerialize)
         {
-            var serializer = new DataContractJsonSerializer(toSerialize.GetType());
+            var serializer = new  XmlSerializer(toSerialize.GetType());
             string output;
             using (var ms = new MemoryStream())
             {
-                serializer.WriteObject(ms, toSerialize);
+                serializer.Serialize(ms, toSerialize);
                 output = Encoding.UTF8.GetString(ms.ToArray());
             }
             return output;
@@ -20,11 +23,11 @@ namespace DEG.ServiceCore.Helpers
 
         public static T Parse<T>(string toParse) where T : class
         {
-            var serializer = new DataContractJsonSerializer(typeof (T));
+            var serializer = new XmlSerializer(typeof(T));
             T result;
             using (var ms = new MemoryStream(Encoding.UTF8.GetBytes(toParse)))
             {
-                result = serializer.ReadObject(ms) as T;
+                result = serializer.Deserialize(ms) as T;
             }
             return result;
         }
