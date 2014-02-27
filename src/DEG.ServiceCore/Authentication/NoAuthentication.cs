@@ -8,5 +8,10 @@ namespace DEG.ServiceCore.Authentication
         {
             return new WebClient();
         }
+
+        public string GetAuthenticatedUrl(string url)
+        {
+            return url;
+        }
     }
 }

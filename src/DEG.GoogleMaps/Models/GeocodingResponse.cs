@@ -11,6 +11,9 @@ namespace DEG.GoogleMaps.Models
         [DataMember(Name = "results")]
         public GeocodingResult[] Results { get; set; }
 
+        [DataMember(Name = "error_message")]
+        public string ErrorMessage { get; set; }
+
         public override string ToString()
         {
             return string.Format("{0}: {1} results", Status, (Results ?? new GeocodingResult[0]).Length);

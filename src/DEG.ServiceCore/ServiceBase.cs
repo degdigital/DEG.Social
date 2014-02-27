@@ -30,7 +30,7 @@ namespace DEG.ServiceCore
             string resultString;
             using (var client = _auth.GetAuthenticatedWebClient())
             {
-                resultString = client.DownloadString(url);
+                resultString = client.DownloadString(_auth.GetAuthenticatedUrl(url));
             }
             return resultString;
         }

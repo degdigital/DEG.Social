@@ -47,6 +47,11 @@ namespace DEG.ServiceCore.Authentication
             return client;
         }
 
+        public string GetAuthenticatedUrl(string url)
+        {
+            return url;
+        }
+
         protected virtual string RetrieveBearerToken()
         {
             var encodedConsumerKey = HttpUtility.UrlEncode(_consumerKey);

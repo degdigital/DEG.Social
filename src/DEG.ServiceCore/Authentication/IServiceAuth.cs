@@ -7,5 +7,6 @@ namespace DEG.ServiceCore.Authentication
     public interface IServiceAuth
     {
         WebClient GetAuthenticatedWebClient();
+        string GetAuthenticatedUrl(string url);
     }
 }

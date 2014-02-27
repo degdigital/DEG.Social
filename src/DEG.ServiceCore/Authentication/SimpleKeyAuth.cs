@@ -1,3 +1,4 @@
+using System;
 using System.Net;
 using DEG.ServiceCore.Exceptions;
 
@@ -26,6 +27,11 @@ namespace DEG.ServiceCore.Authentication
             client.Headers.Add(_apiTokenKey, _apiToken);
 
             return client;
+        }
+
+        public string GetAuthenticatedUrl(string url)
+        {
+            return url + (url.Contains("?") ? "&" : "?") + _apiTokenKey + "=" + _apiToken;
         }
     }
 }

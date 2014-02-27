@@ -17,7 +17,7 @@ namespace DEG.GoogleMaps
     public class GeocodingService : ServiceBase, IGeocodingService
     {
         private readonly bool _deviceHasGpsSensor;
-        internal const string GeocodingUrl = "http://maps.googleapis.com/maps/api/geocode/json";
+        internal const string GeocodingUrl = "https://maps.googleapis.com/maps/api/geocode/json";
 
         public GeocodingService(IServiceAuth auth, bool deviceHasGpsSensor) : base(auth)
         {
