@@ -1,0 +1,154 @@
+﻿{
+ "kind": "youtube#playlistItemListResponse",
+ "etag": "\"BDC7VThyM9nfoSQm1_kOyhtJTEw/a_psF_VY66lu-qvGRBiAeuHb4fg\"",
+ "prevPageToken": "CAUQAQ",
+ "pageInfo": {
+  "totalResults": 9,
+  "resultsPerPage": 5
+ },
+ "items": [
+  {
+   "kind": "youtube#playlistItem",
+   "etag": "\"BDC7VThyM9nfoSQm1_kOyhtJTEw/V2-acG8VQP7JjoTGhxogXzHRvJs\"",
+   "id": "UUBd9sjLgVttowBROUg6P4onu0_SNtFMzV",
+   "snippet": {
+    "publishedAt": "2010-04-06T20:08:04.000Z",
+    "channelId": "UC923_-h1f5LmOmZ5iHRIvPQ",
+    "title": "Activities at Holiday Retirement",
+    "description": "Its a proven truth: engaged seniors lead richer, more satisfying lives. So at Holiday Retirement, weve put together a comprehensive program of activities and events designed to stimulate the seven dimensions of wellness: physical, emotional, spiritual, intellectual, creative, social and vocational. Beyond just games and puzzles, our activities are part of a holistic wellness approach youll only find at Holiday, designed to help seniors live more robust, fulfilling lives. \r\n\r\nLearn more about Activities at Holiday Retirement on our web site: http://www.holidaytouch.com",
+    "thumbnails": {
+     "default": {
+      "url": "https://i1.ytimg.com/vi/r4agLPzeLn4/default.jpg"
+     },
+     "medium": {
+      "url": "https://i1.ytimg.com/vi/r4agLPzeLn4/mqdefault.jpg"
+     },
+     "high": {
+      "url": "https://i1.ytimg.com/vi/r4agLPzeLn4/hqdefault.jpg"
+     }
+    },
+    "channelTitle": "Holiday Retirement",
+    "playlistId": "UU923_-h1f5LmOmZ5iHRIvPQ",
+    "position": 5,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "r4agLPzeLn4"
+    }
+   },
+   "contentDetails": {
+    "videoId": "r4agLPzeLn4"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+   "kind": "youtube#playlistItem",
+   "etag": "\"BDC7VThyM9nfoSQm1_kOyhtJTEw/K4t5rZY14SOF2w1s2hkHthmjF7c\"",
+   "id": "UUBd9sjLgVttpDLa9hGols_w2qkpfyqomS",
+   "snippet": {
+    "publishedAt": "2010-04-06T19:24:10.000Z",
+    "channelId": "UC923_-h1f5LmOmZ5iHRIvPQ",
+    "title": "Pets at Holiday Retirement",
+    "description": "We love having cats and dogs as part of our community. After all, they are part of the family. Some of our most popular residents have four legs!\r\n\r\nLearn more about pets at Holiday Retirement on our web site: http://www.holidaytouch.com",
+    "thumbnails": {
+     "default": {
+      "url": "https://i1.ytimg.com/vi/izJTQETbs9Y/default.jpg"
+     },
+     "medium": {
+      "url": "https://i1.ytimg.com/vi/izJTQETbs9Y/mqdefault.jpg"
+     },
+     "high": {
+      "url": "https://i1.ytimg.com/vi/izJTQETbs9Y/hqdefault.jpg"
+     },
+     "standard": {
+      "url": "https://i1.ytimg.com/vi/izJTQETbs9Y/sddefault.jpg"
+     }
+    },
+    "channelTitle": "Holiday Retirement",
+    "playlistId": "UU923_-h1f5LmOmZ5iHRIvPQ",
+    "position": 6,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "izJTQETbs9Y"
+    }
+   },
+   "contentDetails": {
+    "videoId": "izJTQETbs9Y"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+   "kind": "youtube#playlistItem",
+   "etag": "\"BDC7VThyM9nfoSQm1_kOyhtJTEw/aJes4ut17ViLBcdb2jIFW58i6jc\"",
+   "id": "UUBd9sjLgVttpluQBjnICYah2N5H18H6f2",
+   "snippet": {
+    "publishedAt": "2010-04-02T19:01:50.000Z",
+    "channelId": "UC923_-h1f5LmOmZ5iHRIvPQ",
+    "title": "Travel at Holiday Retirement",
+    "description": "ur one-of-a-kind travel program allows residents to experience the same lifestyle they receive at their own community at the majority of the 300 other Holiday Retirement communities across the United States and Canada at no additional expense. While traveling, residents can stay in a comfortable guest suite, enjoy the chef-prepared meals at no cost, and participate in all community activities. With Holiday, youll always feel at home, wherever you may be.\r\n\r\nLearn more about our Travel Program by visiting our web site: http://www.holidaytouch.com",
+    "thumbnails": {
+     "default": {
+      "url": "https://i1.ytimg.com/vi/ruRTuHJ4AmM/default.jpg"
+     },
+     "medium": {
+      "url": "https://i1.ytimg.com/vi/ruRTuHJ4AmM/mqdefault.jpg"
+     },
+     "high": {
+      "url": "https://i1.ytimg.com/vi/ruRTuHJ4AmM/hqdefault.jpg"
+     }
+    },
+    "channelTitle": "Holiday Retirement",
+    "playlistId": "UU923_-h1f5LmOmZ5iHRIvPQ",
+    "position": 7,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "ruRTuHJ4AmM"
+    }
+   },
+   "contentDetails": {
+    "videoId": "ruRTuHJ4AmM"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+   "kind": "youtube#playlistItem",
+   "etag": "\"BDC7VThyM9nfoSQm1_kOyhtJTEw/Wf4AU7rl4rvC6PKs_qD_6ksqjS4\"",
+   "id": "UUBd9sjLgVttqxXaa2ZbydpuLHHuaCf_0t",
+   "snippet": {
+    "publishedAt": "2010-03-31T00:26:41.000Z",
+    "channelId": "UC923_-h1f5LmOmZ5iHRIvPQ",
+    "title": "Dining at Holiday Retirement",
+    "description": "We know that cuisine is one of the most important factors in determining where you or your loved one will live, so we make sure our menus are robust and varied (featuring many regional favorites), and ,quite simply, delicious. Everything, from entrée to dessert, is made by our professionally trained chefs fresh from scratch; options are also available at each meal for residents who prefer something different. \r\n\r\nLearn more about Dining at Holiday Retirement by visiting our web site: http://www.holidaytouch.com",
+    "thumbnails": {
+     "default": {
+      "url": "https://i1.ytimg.com/vi/ND2emSlRhSo/default.jpg"
+     },
+     "medium": {
+      "url": "https://i1.ytimg.com/vi/ND2emSlRhSo/mqdefault.jpg"
+     },
+     "high": {
+      "url": "https://i1.ytimg.com/vi/ND2emSlRhSo/hqdefault.jpg"
+     }
+    },
+    "channelTitle": "Holiday Retirement",
+    "playlistId": "UU923_-h1f5LmOmZ5iHRIvPQ",
+    "position": 8,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "ND2emSlRhSo"
+    }
+   },
+   "contentDetails": {
+    "videoId": "ND2emSlRhSo"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  }
+ ]
+}
