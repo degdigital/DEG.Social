@@ -46,6 +46,7 @@
     <Compile Include="Authentication\NoAuthentication.cs" />
     <Compile Include="Authentication\SimpleKeyAuth.cs" />
     <Compile Include="Authentication\IServiceAuth.cs" />
+    <Compile Include="Models\DataFormat.cs" />
     <Compile Include="Exceptions\AuthenticationFailedException.cs" />
     <Compile Include="Exceptions\InvalidApiKeyException.cs" />
     <Compile Include="Exceptions\InvalidBearerTokenException.cs" />
