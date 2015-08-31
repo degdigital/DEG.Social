@@ -40,8 +40,21 @@ namespace DEG.ServiceCore
 
         public TResp SubmitObject<TResp, TReq>(string url, TReq request, DataFormat format = DataFormat.Json) where TResp : class
         {
-            var contentType = format == DataFormat.Xml ? "application/xml" : "application/json";
-            var resultString = SubmitString(url, request, contentType);
+            string contentType;
+            string requestString;
+
+            if (format == DataFormat.Xml)
+            {
+                contentType = "application/xml";
+                requestString = XmlHelper.Stringify(request);
+            }
+            else
+            {
+                contentType = "application/json";
+                requestString = JsonHelper.Stringify(request);
+            }
+
+            var resultString = SubmitString(url, requestString, contentType);
 
             TResp results;
             if (JsonHelper.TryParse(resultString, out results))
@@ -52,15 +65,11 @@ namespace DEG.ServiceCore
             return default(TResp);
         }
 
-        protected string SubmitString<TReq>(string url, TReq request, string contentType)
+        protected string SubmitString(string url, string requestString, string contentType)
         {
             string resultString;
             using (var client = _auth.GetAuthenticatedWebClient())
-            {
-                var requestString = contentType.Equals("application/xml", StringComparison.InvariantCultureIgnoreCase)
-                                           ? XmlHelper.Stringify(request)
-                                           : JsonHelper.Stringify(request);
-
+            {                               
                 client.Headers.Add(HttpRequestHeader.ContentType, contentType);
                 resultString = client.UploadString(_auth.GetAuthenticatedUrl(url), requestString);
             }
