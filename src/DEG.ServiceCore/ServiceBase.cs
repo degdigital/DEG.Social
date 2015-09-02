@@ -71,6 +71,7 @@ namespace DEG.ServiceCore
             using (var client = _auth.GetAuthenticatedWebClient())
             {                               
                 client.Headers.Add(HttpRequestHeader.ContentType, contentType);
+                client.Headers.Add(HttpRequestHeader.Accept, contentType);
                 resultString = client.UploadString(_auth.GetAuthenticatedUrl(url), requestString);
             }
             return resultString;
