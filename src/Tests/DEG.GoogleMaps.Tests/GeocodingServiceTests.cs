@@ -1,5 +1,5 @@
-﻿using System.Linq;
-using DEG.GoogleMaps.Models;
+﻿using DEG.GoogleMaps.Models;
+using DEG.GoogleMaps.Services;
 using DEG.ServiceCore.Authentication;
 using FluentAssertions;
 using NUnit.Framework;

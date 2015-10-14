@@ -4,7 +4,7 @@ using DEG.GoogleMaps.Models;
 using DEG.ServiceCore;
 using DEG.ServiceCore.Authentication;
 
-namespace DEG.GoogleMaps
+namespace DEG.GoogleMaps.Services
 {
     public interface IGeocodingService
     {

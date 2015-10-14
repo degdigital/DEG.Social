@@ -66,6 +66,7 @@
     <Compile Include="GeocodingServiceTests.cs" />
     <Compile Include="LookupByAddressParsingTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UrlServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\Response1.xml" />
