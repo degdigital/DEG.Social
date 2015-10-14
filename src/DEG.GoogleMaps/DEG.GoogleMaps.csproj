@@ -43,9 +43,10 @@
   <ItemGroup>
     <Compile Include="Authentication\GoogleBusinessLicenseAuth.cs" />
     <Compile Include="Authentication\GoogleSimpleApiAccess.cs" />
-    <Compile Include="GeocodingService.cs" />
+    <Compile Include="Services\GeocodingService.cs" />
     <Compile Include="Models\GeocodingResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\UrlService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DEG.ServiceCore\DEG.ServiceCore.csproj">
